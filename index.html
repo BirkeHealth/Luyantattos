@@ -179,6 +179,14 @@
       }
       .ticker span { color: var(--gold); font: 400 .8rem var(--sans); }
 
+      .work { background: #0e0e0d; border-block: 1px solid rgba(255,255,255,.06); }
+      .work-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px; }
+      .work-head .section-title { margin-top: 17px; }
+      .work-head p { max-width: 360px; margin: 0 0 5px; color: var(--muted); font-size: .88rem; line-height: 1.8; }
+      .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 326px), 1fr)); gap: 18px; align-items: start; }
+      .work-grid .instagram-media { width: 100% !important; min-width: min(100%, 326px) !important; max-width: 540px !important; margin: 0 auto !important; border: 1px solid var(--line) !important; border-radius: 2px !important; box-shadow: none !important; }
+      .work-grid .instagram-media > a { display: flex; min-height: 180px; align-items: center; justify-content: center; color: var(--gold); font-size: .78rem; letter-spacing: .08em; text-align: center; }
+
       section { padding: 112px 0; }
       .intro {
         display: grid;
@@ -260,6 +268,8 @@
         section { padding: 78px 0; }
         .intro { grid-template-columns: 1fr; gap: 16px; }
         .intro-copy { padding-top: 12px; }
+        .work-head { display: block; margin-bottom: 30px; }
+        .work-head p { margin-top: 17px; }
         .process-head { display: block; margin-bottom: 36px; }
         .process-head p { margin-top: 17px; }
         .steps { grid-template-columns: 1fr; }
@@ -283,6 +293,7 @@
         </a>
         <div class="nav-links">
           <a href="#about" data-i18n="nav_about">About</a>
+          <a href="#work" data-i18n="nav_work">My work</a>
           <a href="#process" data-i18n="nav_process">The process</a>
           <a href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer" data-i18n="instagram">Instagram</a>
           <a class="nav-whatsapp" data-whatsapp href="https://wa.me/15616631925?text=Hi%20Luyan%2C%20I%27d%20like%20to%20ask%20about%20a%20tattoo." target="_blank" rel="noopener noreferrer" data-i18n="whatsapp">WhatsApp</a>
@@ -318,6 +329,35 @@
           <div data-i18n="ticker_custom">Custom work</div><span>✦</span><div data-i18n="ticker_considered">Considered design</div><span>✦</span><div data-i18n="ticker_care">Made with care</div>
         </div>
       </div>
+
+      <section class="work" id="work" aria-labelledby="work-title">
+        <div class="wrap">
+          <div class="work-head">
+            <div>
+              <span class="eyebrow" data-i18n="work_eyebrow">Selected work</span>
+              <h2 class="section-title" id="work-title" data-i18n="work_title">My work</h2>
+            </div>
+            <p data-i18n="work_copy">A selection of tattoo work from Instagram. Tap a post to view it on Instagram.</p>
+          </div>
+          <div class="work-grid">
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DbO0Lp1s5Nd/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/p/DbO0Lp1s5Nd/" target="_blank" rel="noopener noreferrer" data-i18n="work_open">View on Instagram ↗</a>
+            </blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DboYYrWs4ZZ/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/DboYYrWs4ZZ/" target="_blank" rel="noopener noreferrer" data-i18n="work_open">View on Instagram ↗</a>
+            </blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcHavrWMe6L/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/DcHavrWMe6L/" target="_blank" rel="noopener noreferrer" data-i18n="work_open">View on Instagram ↗</a>
+            </blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcUM2lSsU6A/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/DcUM2lSsU6A/" target="_blank" rel="noopener noreferrer" data-i18n="work_open">View on Instagram ↗</a>
+            </blockquote>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcWtP3SMamg/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/reel/DcWtP3SMamg/" target="_blank" rel="noopener noreferrer" data-i18n="work_open">View on Instagram ↗</a>
+            </blockquote>
+          </div>
+        </div>
+      </section>
 
       <section id="about">
         <div class="intro wrap">
@@ -394,10 +434,15 @@
           home_link: "Luyan home",
           brand_caption: "Custom tattoo artist",
           nav_about: "About",
+          nav_work: "My work",
           nav_process: "The process",
           instagram: "Instagram",
           whatsapp: "WhatsApp",
           nav_enquire: "Enquire about a tattoo",
+          work_eyebrow: "Selected work",
+          work_title: "My work",
+          work_copy: "A selection of tattoo work from Instagram. Tap a post to view it on Instagram.",
+          work_open: "View on Instagram ↗",
           hero_eyebrow: "Personal by nature. Permanent by choice.",
           hero_title_start: "Your story,",
           hero_title_middle: "beautifully",
@@ -449,10 +494,15 @@
           home_link: "Inicio de Luyan",
           brand_caption: "Artista de tatuajes personalizados",
           nav_about: "Sobre mí",
+          nav_work: "Mi trabajo",
           nav_process: "El proceso",
           instagram: "Instagram",
           whatsapp: "WhatsApp",
           nav_enquire: "Consulta por tu tatuaje",
+          work_eyebrow: "Trabajo seleccionado",
+          work_title: "Mi trabajo",
+          work_copy: "Una selección de tatuajes de Instagram. Toca una publicación para verla en Instagram.",
+          work_open: "Ver en Instagram ↗",
           hero_eyebrow: "Personal por naturaleza. Permanente por elección.",
           hero_title_start: "Tu historia,",
           hero_title_middle: "plasmada en",
@@ -548,5 +598,6 @@
       document.querySelector("#year").textContent = new Date().getFullYear();
       setLanguage(currentLanguage);
     </script>
+    <script async src="https://www.instagram.com/embed.js"></script>
   </body>
 </html>
