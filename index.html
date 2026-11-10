@@ -186,10 +186,12 @@
       .work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; }
       .work-card { margin: 0; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
       .work-card img { display: block; width: 100%; height: auto; transition: transform .35s ease; }
+      .work-card > img { aspect-ratio: 3 / 4; object-fit: cover; }
       .work-card:hover img { transform: scale(1.025); }
-      .comparison-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); }
       .comparison-frame { position: relative; overflow: hidden; margin: 0; background: var(--panel); }
-      .comparison-frame img { width: 100%; aspect-ratio: 3 / 5; object-fit: cover; object-position: center; }
+      .comparison-frame img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: center; }
+      .comparison-frame img.comparison-image--before { object-position: left center; }
+      .comparison-frame img.comparison-image--after { object-position: right center; }
       .comparison-frame figcaption { position: absolute; top: 12px; left: 12px; padding: 6px 10px; background: rgba(9,9,9,.78); color: var(--paper); font-size: .65rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 
       section { padding: 112px 0; }
@@ -274,7 +276,6 @@
         .intro { grid-template-columns: 1fr; gap: 16px; }
         .intro-copy { padding-top: 12px; }
         .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-        .work-card--comparison { grid-column: 1 / -1; }
         .work-head { display: block; margin-bottom: 30px; }
         .work-head p { margin-top: 17px; }
         .process-head { display: block; margin-bottom: 36px; }
@@ -353,26 +354,25 @@
             <figure class="work-card">
               <img src="assets/work-viking.jpeg" alt="Viking-inspired sleeve tattoo with knotwork and ravens." data-i18n-alt="work_alt_viking" loading="lazy" decoding="async">
             </figure>
-            <div class="work-card work-card--comparison">
-              <div class="comparison-pair">
-                <figure class="comparison-frame">
-                  <img src="assets/work-scorpion.jpeg" alt="Before: close-up of the original scorpion tattoo." data-i18n-alt="work_alt_before" loading="lazy" decoding="async">
-                  <figcaption data-i18n="comparison_before">Before</figcaption>
-                </figure>
-                <figure class="comparison-frame">
-                  <img src="assets/work-color.jpeg" alt="After: the finished color tattoo." data-i18n-alt="work_alt_after" loading="lazy" decoding="async">
-                  <figcaption data-i18n="comparison_after">After</figcaption>
-                </figure>
-              </div>
-            </div>
             <figure class="work-card">
               <img src="assets/work-samurai.jpeg" alt="Samurai mask tattoo with red floral accents." data-i18n-alt="work_alt_samurai" loading="lazy" decoding="async">
+            </figure>
+            <figure class="work-card comparison-frame">
+              <img src="assets/work-scorpion.jpeg" alt="Before: close-up of the original scorpion tattoo." data-i18n-alt="work_alt_before" loading="lazy" decoding="async">
+              <figcaption data-i18n="comparison_before">Before</figcaption>
+            </figure>
+            <figure class="work-card comparison-frame">
+              <img src="assets/work-color.jpeg" alt="After: the finished color tattoo." data-i18n-alt="work_alt_after" loading="lazy" decoding="async">
+              <figcaption data-i18n="comparison_after">After</figcaption>
             </figure>
             <figure class="work-card">
               <img src="assets/work-mask.png" alt="Ornamental mask tattoo with red floral accents." data-i18n-alt="work_alt_mask" loading="lazy" decoding="async">
             </figure>
-            <figure class="work-card">
-              <img src="assets/work-transformation.png" alt="Before-and-after comparison showing a faded feather tattoo refreshed with red and blue color." data-i18n-alt="work_alt_transformation" loading="lazy" decoding="async">
+            <figure class="work-card comparison-frame">
+              <img src="assets/work-transformation.png" class="comparison-image--before" alt="Before: a faded blue feather tattoo." data-i18n-alt="work_alt_transformation_before" loading="lazy" decoding="async">
+            </figure>
+            <figure class="work-card comparison-frame">
+              <img src="assets/work-transformation.png" class="comparison-image--after" alt="After: the feather tattoo refreshed with red and blue color." data-i18n-alt="work_alt_transformation_after" loading="lazy" decoding="async">
             </figure>
             <figure class="work-card">
               <img src="assets/work-angel-warrior.png" alt="Blackwork tattoo of a hooded, winged warrior in ornate armor." data-i18n-alt="work_alt_warrior" loading="lazy" decoding="async">
@@ -473,7 +473,8 @@
           work_alt_after: "After: the finished color tattoo.",
           work_alt_samurai: "Samurai mask tattoo with red floral accents.",
           work_alt_mask: "Ornamental mask tattoo with red floral accents.",
-          work_alt_transformation: "Before-and-after comparison showing a faded feather tattoo refreshed with red and blue color.",
+          work_alt_transformation_before: "Before: a faded blue feather tattoo.",
+          work_alt_transformation_after: "After: the feather tattoo refreshed with red and blue color.",
           work_alt_warrior: "Blackwork tattoo of a hooded, winged warrior in ornate armor.",
           work_alt_oni: "Japanese oni mask tattoo with red horns and ornamental details.",
           comparison_before: "Before",
@@ -543,7 +544,8 @@
           work_alt_after: "Después: el tatuaje a color terminado.",
           work_alt_samurai: "Tatuaje de máscara samurái con detalles florales rojos.",
           work_alt_mask: "Tatuaje de máscara ornamental con detalles florales rojos.",
-          work_alt_transformation: "Comparación del antes y después de un tatuaje de pluma descolorido, renovado con tonos rojos y azules.",
+          work_alt_transformation_before: "Antes: un tatuaje de pluma azul descolorido.",
+          work_alt_transformation_after: "Después: el tatuaje de pluma renovado con tonos rojos y azules.",
           work_alt_warrior: "Tatuaje en negro de un guerrero encapuchado con alas y armadura ornamentada.",
           work_alt_oni: "Tatuaje de máscara oni japonesa con cuernos rojos y detalles ornamentales.",
           comparison_before: "Antes",
