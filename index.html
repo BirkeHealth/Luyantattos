@@ -183,9 +183,10 @@
       .work-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px; }
       .work-head .section-title { margin-top: 17px; }
       .work-head p { max-width: 360px; margin: 0 0 5px; color: var(--muted); font-size: .88rem; line-height: 1.8; }
-      .work-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 326px), 1fr)); gap: 18px; align-items: start; }
-      .work-grid .instagram-media { width: 100% !important; min-width: min(100%, 326px) !important; max-width: 540px !important; margin: 0 auto !important; border: 1px solid var(--line) !important; border-radius: 2px !important; box-shadow: none !important; }
-      .work-grid .instagram-media > a { display: flex; min-height: 180px; align-items: center; justify-content: center; color: var(--gold); font-size: .78rem; letter-spacing: .08em; text-align: center; }
+      .work-grid { columns: 3; column-gap: 18px; }
+      .work-card { break-inside: avoid; margin: 0 0 18px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
+      .work-card img { display: block; width: 100%; height: auto; transition: transform .35s ease; }
+      .work-card:hover img { transform: scale(1.025); }
 
       section { padding: 112px 0; }
       .intro {
@@ -268,6 +269,8 @@
         section { padding: 78px 0; }
         .intro { grid-template-columns: 1fr; gap: 16px; }
         .intro-copy { padding-top: 12px; }
+        .work-grid { columns: 2; column-gap: 12px; }
+        .work-card { margin-bottom: 12px; }
         .work-head { display: block; margin-bottom: 30px; }
         .work-head p { margin-top: 17px; }
         .process-head { display: block; margin-bottom: 36px; }
@@ -340,21 +343,24 @@
             <p data-i18n="work_copy">A selection of tattoo work from Instagram. Tap a post to view it on Instagram.</p>
           </div>
           <div class="work-grid">
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DbO0Lp1s5Nd/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/p/DbO0Lp1s5Nd/" target="_blank" rel="noopener noreferrer" data-i18n="work_open">View on Instagram ↗</a>
-            </blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DboYYrWs4ZZ/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/DboYYrWs4ZZ/" target="_blank" rel="noopener noreferrer" data-i18n="work_open">View on Instagram ↗</a>
-            </blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcHavrWMe6L/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/DcHavrWMe6L/" target="_blank" rel="noopener noreferrer" data-i18n="work_open">View on Instagram ↗</a>
-            </blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcUM2lSsU6A/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/DcUM2lSsU6A/" target="_blank" rel="noopener noreferrer" data-i18n="work_open">View on Instagram ↗</a>
-            </blockquote>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DcWtP3SMamg/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/reel/DcWtP3SMamg/" target="_blank" rel="noopener noreferrer" data-i18n="work_open">View on Instagram ↗</a>
-            </blockquote>
+            <figure class="work-card">
+              <img src="assets/work-knife.jpeg" alt="Ornamental dagger tattoo with geometric details." data-i18n-alt="work_alt_knife" loading="lazy" decoding="async">
+            </figure>
+            <figure class="work-card">
+              <img src="assets/work-viking.jpeg" alt="Viking-inspired sleeve tattoo with knotwork and ravens." data-i18n-alt="work_alt_viking" loading="lazy" decoding="async">
+            </figure>
+            <figure class="work-card">
+              <img src="assets/work-scorpion.jpeg" alt="Close-up of a scorpion tattoo." data-i18n-alt="work_alt_scorpion" loading="lazy" decoding="async">
+            </figure>
+            <figure class="work-card">
+              <img src="assets/work-color.jpeg" alt="Color tattoo featuring blue, red, and black details." data-i18n-alt="work_alt_color" loading="lazy" decoding="async">
+            </figure>
+            <figure class="work-card">
+              <img src="assets/work-samurai.jpeg" alt="Samurai mask tattoo with red floral accents." data-i18n-alt="work_alt_samurai" loading="lazy" decoding="async">
+            </figure>
+            <figure class="work-card">
+              <img src="assets/work-mask.jpeg" alt="Ornamental mask tattoo with red floral accents." data-i18n-alt="work_alt_mask" loading="lazy" decoding="async">
+            </figure>
           </div>
         </div>
       </section>
@@ -441,8 +447,13 @@
           nav_enquire: "Enquire about a tattoo",
           work_eyebrow: "Selected work",
           work_title: "My work",
-          work_copy: "A selection of tattoo work from Instagram. Tap a post to view it on Instagram.",
-          work_open: "View on Instagram ↗",
+          work_copy: "A selection of Luyan's tattoo work.",
+          work_alt_knife: "Ornamental dagger tattoo with geometric details.",
+          work_alt_viking: "Viking-inspired sleeve tattoo with knotwork and ravens.",
+          work_alt_scorpion: "Close-up of a scorpion tattoo.",
+          work_alt_color: "Color tattoo featuring blue, red, and black details.",
+          work_alt_samurai: "Samurai mask tattoo with red floral accents.",
+          work_alt_mask: "Ornamental mask tattoo with red floral accents.",
           hero_eyebrow: "Personal by nature. Permanent by choice.",
           hero_title_start: "Your story,",
           hero_title_middle: "beautifully",
@@ -501,8 +512,13 @@
           nav_enquire: "Consulta por tu tatuaje",
           work_eyebrow: "Trabajo seleccionado",
           work_title: "Mi trabajo",
-          work_copy: "Una selección de tatuajes de Instagram. Toca una publicación para verla en Instagram.",
-          work_open: "Ver en Instagram ↗",
+          work_copy: "Una selección de tatuajes de Luyan.",
+          work_alt_knife: "Tatuaje de daga ornamental con detalles geométricos.",
+          work_alt_viking: "Tatuaje de manga de inspiración vikinga, con nudos y cuervos.",
+          work_alt_scorpion: "Detalle de un tatuaje de escorpión.",
+          work_alt_color: "Tatuaje a color con detalles azules, rojos y negros.",
+          work_alt_samurai: "Tatuaje de máscara samurái con detalles florales rojos.",
+          work_alt_mask: "Tatuaje de máscara ornamental con detalles florales rojos.",
           hero_eyebrow: "Personal por naturaleza. Permanente por elección.",
           hero_title_start: "Tu historia,",
           hero_title_middle: "plasmada en",
@@ -598,6 +614,5 @@
       document.querySelector("#year").textContent = new Date().getFullYear();
       setLanguage(currentLanguage);
     </script>
-    <script async src="https://www.instagram.com/embed.js"></script>
   </body>
 </html>
