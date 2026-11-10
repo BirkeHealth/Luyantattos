@@ -184,6 +184,7 @@
       .work-head .section-title { margin-top: 17px; }
       .work-head p { max-width: 360px; margin: 0 0 5px; color: var(--muted); font-size: .88rem; line-height: 1.8; }
       .work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; }
+      .comparison-pair { display: grid; grid-column: span 2; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
       .work-card { margin: 0; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
       .work-card img { display: block; width: 100%; height: auto; transition: transform .35s ease; }
       .work-card > img { aspect-ratio: 3 / 4; object-fit: cover; }
@@ -276,6 +277,7 @@
         .intro { grid-template-columns: 1fr; gap: 16px; }
         .intro-copy { padding-top: 12px; }
         .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+        .comparison-pair { gap: 12px; }
         .work-head { display: block; margin-bottom: 30px; }
         .work-head p { margin-top: 17px; }
         .process-head { display: block; margin-bottom: 36px; }
@@ -348,14 +350,16 @@
             <p data-i18n="work_copy">A selection of tattoo work from Instagram. Tap a post to view it on Instagram.</p>
           </div>
           <div class="work-grid">
-            <figure class="work-card comparison-frame">
-              <img src="assets/work-scorpion.jpeg" alt="Before: close-up of the original scorpion tattoo." data-i18n-alt="work_alt_before" loading="lazy" decoding="async">
-              <figcaption data-i18n="comparison_before">Before</figcaption>
-            </figure>
-            <figure class="work-card comparison-frame">
-              <img src="assets/work-color.jpeg" alt="After: the finished color tattoo." data-i18n-alt="work_alt_after" loading="lazy" decoding="async">
-              <figcaption data-i18n="comparison_after">After</figcaption>
-            </figure>
+            <div class="comparison-pair">
+              <figure class="work-card comparison-frame">
+                <img src="assets/work-scorpion.jpeg" alt="Before: close-up of the original scorpion tattoo." data-i18n-alt="work_alt_before" loading="lazy" decoding="async">
+                <figcaption data-i18n="comparison_before">Before</figcaption>
+              </figure>
+              <figure class="work-card comparison-frame">
+                <img src="assets/work-color.jpeg" alt="After: the finished color tattoo." data-i18n-alt="work_alt_after" loading="lazy" decoding="async">
+                <figcaption data-i18n="comparison_after">After</figcaption>
+              </figure>
+            </div>
             <figure class="work-card">
               <img src="assets/work-knife.jpeg" alt="Ornamental dagger tattoo with geometric details." data-i18n-alt="work_alt_knife" loading="lazy" decoding="async">
             </figure>
@@ -368,12 +372,14 @@
             <figure class="work-card">
               <img src="assets/work-mask.png" alt="Ornamental mask tattoo with red floral accents." data-i18n-alt="work_alt_mask" loading="lazy" decoding="async">
             </figure>
-            <figure class="work-card comparison-frame">
-              <img src="assets/work-transformation.png" class="comparison-image--before" alt="Before: a faded blue feather tattoo." data-i18n-alt="work_alt_transformation_before" loading="lazy" decoding="async">
-            </figure>
-            <figure class="work-card comparison-frame">
-              <img src="assets/work-transformation.png" class="comparison-image--after" alt="After: the feather tattoo refreshed with red and blue color." data-i18n-alt="work_alt_transformation_after" loading="lazy" decoding="async">
-            </figure>
+            <div class="comparison-pair">
+              <figure class="work-card comparison-frame">
+                <img src="assets/work-transformation.png" class="comparison-image--before" alt="Before: a faded blue feather tattoo." data-i18n-alt="work_alt_transformation_before" loading="lazy" decoding="async">
+              </figure>
+              <figure class="work-card comparison-frame">
+                <img src="assets/work-transformation.png" class="comparison-image--after" alt="After: the feather tattoo refreshed with red and blue color." data-i18n-alt="work_alt_transformation_after" loading="lazy" decoding="async">
+              </figure>
+            </div>
             <figure class="work-card">
               <img src="assets/work-angel-warrior.png" alt="Blackwork tattoo of a hooded, winged warrior in ornate armor." data-i18n-alt="work_alt_warrior" loading="lazy" decoding="async">
             </figure>
