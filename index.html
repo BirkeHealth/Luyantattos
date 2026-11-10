@@ -183,11 +183,10 @@
       .work-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 40px; }
       .work-head .section-title { margin-top: 17px; }
       .work-head p { max-width: 360px; margin: 0 0 5px; color: var(--muted); font-size: .88rem; line-height: 1.8; }
-      .work-grid { columns: 3; column-gap: 18px; }
-      .work-card { break-inside: avoid; margin: 0 0 18px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
+      .work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; align-items: start; }
+      .work-card { margin: 0; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
       .work-card img { display: block; width: 100%; height: auto; transition: transform .35s ease; }
       .work-card:hover img { transform: scale(1.025); }
-      .work-card--comparison { column-span: all; }
       .comparison-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); }
       .comparison-frame { position: relative; overflow: hidden; margin: 0; background: var(--panel); }
       .comparison-frame img { width: 100%; aspect-ratio: 3 / 5; object-fit: cover; object-position: center; }
@@ -274,8 +273,8 @@
         section { padding: 78px 0; }
         .intro { grid-template-columns: 1fr; gap: 16px; }
         .intro-copy { padding-top: 12px; }
-        .work-grid { columns: 2; column-gap: 12px; }
-        .work-card { margin-bottom: 12px; }
+        .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+        .work-card--comparison { grid-column: 1 / -1; }
         .work-head { display: block; margin-bottom: 30px; }
         .work-head p { margin-top: 17px; }
         .process-head { display: block; margin-bottom: 36px; }
