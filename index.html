@@ -63,6 +63,17 @@
       .nav-links a:hover { color: var(--gold); }
       .nav-links .nav-cta { padding: 12px 18px; border: 1px solid rgba(201,154,75,.7); color: var(--paper); }
       .nav-links .nav-whatsapp { padding: 12px 18px; border: 1px solid rgba(201,154,75,.7); color: var(--paper); }
+      .language-toggle {
+        padding: 9px 11px;
+        border: 1px solid var(--line);
+        background: transparent;
+        color: var(--paper);
+        cursor: pointer;
+        font-size: .68rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+      }
+      .language-toggle:hover { border-color: var(--gold); color: var(--gold); }
       .menu-toggle { display: none; border: 0; background: none; color: var(--paper); font-size: 1.5rem; }
 
       .hero {
@@ -208,6 +219,7 @@
         .brand-caption { white-space: nowrap; font-size: .5rem; letter-spacing: .12em; }
         .nav-links { gap: 12px; }
         .nav-links .nav-cta, .nav-links .nav-whatsapp { padding-inline: 8px; white-space: nowrap; }
+        .language-toggle { padding-inline: 9px; }
         .hero-grid { gap: 30px; }
         .actions { gap: 8px; }
         .actions .button { min-height: 48px; padding-inline: 12px; font-size: .63rem; white-space: nowrap; }
@@ -264,19 +276,20 @@
   </head>
   <body>
     <header>
-      <nav class="nav wrap" aria-label="Main navigation">
-        <a class="brand" href="#home" aria-label="Luyan home">
+      <nav class="nav wrap" aria-label="Main navigation" data-i18n-aria="nav_aria">
+        <a class="brand" href="#home" aria-label="Luyan home" data-i18n-aria="home_link">
           <img src="assets/luyan-logo.jpeg" alt="">
-          <span><span class="brand-name">LUYAN</span><span class="brand-caption">Custom tattoo artist</span></span>
+          <span><span class="brand-name">LUYAN</span><span class="brand-caption" data-i18n="brand_caption">Custom tattoo artist</span></span>
         </a>
-        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
         <div class="nav-links">
-          <a href="#about">About</a>
-          <a href="#process">The process</a>
-          <a href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a class="nav-whatsapp" href="https://wa.me/15616631925?text=Hi%20Luyan%2C%20I%27d%20like%20to%20ask%20about%20a%20tattoo." target="_blank" rel="noopener noreferrer">WhatsApp</a>
-          <a class="nav-cta" href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer">Enquire about a tattoo</a>
+          <a href="#about" data-i18n="nav_about">About</a>
+          <a href="#process" data-i18n="nav_process">The process</a>
+          <a href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer" data-i18n="instagram">Instagram</a>
+          <a class="nav-whatsapp" data-whatsapp href="https://wa.me/15616631925?text=Hi%20Luyan%2C%20I%27d%20like%20to%20ask%20about%20a%20tattoo." target="_blank" rel="noopener noreferrer" data-i18n="whatsapp">WhatsApp</a>
+          <a class="nav-cta" href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer" data-i18n="nav_enquire">Enquire about a tattoo</a>
         </div>
+        <button class="language-toggle" type="button" aria-label="Switch language to Spanish" aria-pressed="false">ES</button>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
       </nav>
     </header>
 
@@ -284,38 +297,38 @@
       <section class="hero" id="home">
         <div class="hero-grid wrap">
           <div class="hero-copy">
-            <span class="eyebrow">Personal by nature. Permanent by choice.</span>
-            <h1>Your story,<br>beautifully <em>inked.</em></h1>
-            <p>Thoughtful tattoo work, created with care and made to feel like it has always belonged to you.</p>
+            <span class="eyebrow" data-i18n="hero_eyebrow">Personal by nature. Permanent by choice.</span>
+            <h1><span data-i18n="hero_title_start">Your story,</span><br><span data-i18n="hero_title_middle">beautifully</span> <em data-i18n="hero_title_end">inked.</em></h1>
+            <p data-i18n="hero_copy">Thoughtful tattoo work, created with care and made to feel like it has always belonged to you.</p>
             <div class="actions">
-              <a class="button" href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer">Message on Instagram <span aria-hidden="true">&nbsp;↗</span></a>
-              <a class="button button-outline" href="https://wa.me/15616631925?text=Hi%20Luyan%2C%20I%27d%20like%20to%20ask%20about%20a%20tattoo." target="_blank" rel="noopener noreferrer">Message on WhatsApp <span aria-hidden="true">&nbsp;↗</span></a>
-              <a class="text-link" href="#about">Meet the artist</a>
+              <a class="button" href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer"><span data-i18n="message_instagram">Message on Instagram</span> <span aria-hidden="true">&nbsp;↗</span></a>
+              <a class="button button-outline" data-whatsapp href="https://wa.me/15616631925?text=Hi%20Luyan%2C%20I%27d%20like%20to%20ask%20about%20a%20tattoo." target="_blank" rel="noopener noreferrer"><span data-i18n="message_whatsapp">Message on WhatsApp</span> <span aria-hidden="true">&nbsp;↗</span></a>
+              <a class="text-link" href="#about" data-i18n="meet_artist">Meet the artist</a>
             </div>
           </div>
           <div class="hero-mark">
-            <img src="assets/luyan-logo.jpeg" alt="Luyan's silver and gold monogram logo">
+            <img src="assets/luyan-logo.jpeg" alt="Luyan's silver and gold monogram logo" data-i18n-alt="logo_alt">
           </div>
         </div>
-        <div class="scroll-note">Scroll to discover</div>
+        <div class="scroll-note" data-i18n="scroll_note">Scroll to discover</div>
       </section>
 
-      <div class="ticker" aria-label="Custom work, considered design, made with care">
+      <div class="ticker" aria-label="Custom work, considered design, made with care" data-i18n-aria="ticker_aria">
         <div class="ticker-inner">
-          <div>Custom work</div><span>✦</span><div>Considered design</div><span>✦</span><div>Made with care</div>
+          <div data-i18n="ticker_custom">Custom work</div><span>✦</span><div data-i18n="ticker_considered">Considered design</div><span>✦</span><div data-i18n="ticker_care">Made with care</div>
         </div>
       </div>
 
       <section id="about">
         <div class="intro wrap">
           <div>
-            <span class="eyebrow">A little about the work</span>
-            <h2 class="section-title">Ink with meaning.<br>Made for you.</h2>
+            <span class="eyebrow" data-i18n="about_eyebrow">A little about the work</span>
+            <h2 class="section-title"><span data-i18n="about_title_start">Ink with meaning.</span><br><span data-i18n="about_title_end">Made for you.</span></h2>
           </div>
           <div class="intro-copy">
-            <p>A tattoo is more than an image. It can hold a memory, mark a moment, or simply be something you love seeing every day. Every idea starts with a conversation.</p>
-            <p>Bring a reference, a rough thought, or just a feeling. Together, we'll shape it into a design that feels personal to you.</p>
-            <a class="text-link" href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer">Explore the work on Instagram ↗</a>
+            <p data-i18n="about_copy_one">A tattoo is more than an image. It can hold a memory, mark a moment, or simply be something you love seeing every day. Every idea starts with a conversation.</p>
+            <p data-i18n="about_copy_two">Bring a reference, a rough thought, or just a feeling. Together, we'll shape it into a design that feels personal to you.</p>
+            <a class="text-link" href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer" data-i18n="about_instagram">Explore the work on Instagram ↗</a>
           </div>
         </div>
       </section>
@@ -324,26 +337,26 @@
         <div class="wrap">
           <div class="process-head">
             <div>
-              <span class="eyebrow">From idea to ink</span>
-              <h2 class="section-title">A thoughtful process,<br>every step of the way.</h2>
+              <span class="eyebrow" data-i18n="process_eyebrow">From idea to ink</span>
+              <h2 class="section-title"><span data-i18n="process_title_start">A thoughtful process,</span><br><span data-i18n="process_title_end">every step of the way.</span></h2>
             </div>
-            <p>Good work begins with listening. Here's how we take your idea from first message to finished tattoo.</p>
+            <p data-i18n="process_copy">Good work begins with listening. Here's how we take your idea from first message to finished tattoo.</p>
           </div>
           <div class="steps">
             <article class="step">
-              <span class="step-number">01 / The conversation</span>
-              <h3>Tell me your idea</h3>
-              <p>Share what you're imagining, where you'd like it, and any references or inspiration you have.</p>
+              <span class="step-number" data-i18n="step_one_label">01 / The conversation</span>
+              <h3 data-i18n="step_one_title">Tell me your idea</h3>
+              <p data-i18n="step_one_copy">Share what you're imagining, where you'd like it, and any references or inspiration you have.</p>
             </article>
             <article class="step">
-              <span class="step-number">02 / The design</span>
-              <h3>Make it personal</h3>
-              <p>We'll talk through the details and shape a design that feels right for you and your vision.</p>
+              <span class="step-number" data-i18n="step_two_label">02 / The design</span>
+              <h3 data-i18n="step_two_title">Make it personal</h3>
+              <p data-i18n="step_two_copy">We'll talk through the details and shape a design that feels right for you and your vision.</p>
             </article>
             <article class="step">
-              <span class="step-number">03 / The appointment</span>
-              <h3>Make it yours</h3>
-              <p>Once everything feels just right, we'll arrange a time to bring your tattoo to life.</p>
+              <span class="step-number" data-i18n="step_three_label">03 / The appointment</span>
+              <h3 data-i18n="step_three_title">Make it yours</h3>
+              <p data-i18n="step_three_copy">Once everything feels just right, we'll arrange a time to bring your tattoo to life.</p>
             </article>
           </div>
         </div>
@@ -351,12 +364,12 @@
 
       <section class="booking" id="contact">
         <div class="booking-inner wrap">
-          <span class="eyebrow">Your next chapter starts here</span>
-          <h2 class="section-title">Have an idea in mind?</h2>
-          <p>Send a message with a little about your idea and where you'd like your tattoo. Let's start a conversation.</p>
+          <span class="eyebrow" data-i18n="booking_eyebrow">Your next chapter starts here</span>
+          <h2 class="section-title" data-i18n="booking_title">Have an idea in mind?</h2>
+          <p data-i18n="booking_copy">Send a message with a little about your idea and where you'd like your tattoo. Let's start a conversation.</p>
           <div class="booking-actions">
-            <a class="button" href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer">Message on Instagram ↗</a>
-            <a class="button button-outline" href="https://wa.me/15616631925?text=Hi%20Luyan%2C%20I%27d%20like%20to%20ask%20about%20a%20tattoo." target="_blank" rel="noopener noreferrer">Message on WhatsApp ↗</a>
+            <a class="button" href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer" data-i18n="message_instagram_arrow">Message on Instagram ↗</a>
+            <a class="button button-outline" data-whatsapp href="https://wa.me/15616631925?text=Hi%20Luyan%2C%20I%27d%20like%20to%20ask%20about%20a%20tattoo." target="_blank" rel="noopener noreferrer" data-i18n="message_whatsapp_arrow">Message on WhatsApp ↗</a>
           </div>
           <span class="handle">@Tattoos_luyan</span>
         </div>
@@ -365,31 +378,175 @@
 
     <footer>
       <div class="footer-inner wrap">
-        <span>© <span id="year"></span> Luyan. All rights reserved.</span>
-        <a href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+        <span>© <span id="year"></span> <span data-i18n="footer_rights">Luyan. All rights reserved.</span></span>
+        <a href="https://www.instagram.com/Tattoos_luyan/" target="_blank" rel="noopener noreferrer" data-i18n="footer_instagram">Instagram ↗</a>
       </div>
     </footer>
     <script>
       const menuToggle = document.querySelector(".menu-toggle");
       const navLinks = document.querySelector(".nav-links");
+      const languageToggle = document.querySelector(".language-toggle");
+      const translations = {
+        en: {
+          pageTitle: "Luyan — Custom Tattoo Artist",
+          pageDescription: "Custom tattoo work by Luyan. Explore the work and enquire about your next tattoo on Instagram.",
+          nav_aria: "Main navigation",
+          home_link: "Luyan home",
+          brand_caption: "Custom tattoo artist",
+          nav_about: "About",
+          nav_process: "The process",
+          instagram: "Instagram",
+          whatsapp: "WhatsApp",
+          nav_enquire: "Enquire about a tattoo",
+          hero_eyebrow: "Personal by nature. Permanent by choice.",
+          hero_title_start: "Your story,",
+          hero_title_middle: "beautifully",
+          hero_title_end: "inked.",
+          hero_copy: "Thoughtful tattoo work, created with care and made to feel like it has always belonged to you.",
+          message_instagram: "Message on Instagram",
+          message_whatsapp: "Message on WhatsApp",
+          meet_artist: "Meet the artist",
+          scroll_note: "Scroll to discover",
+          ticker_aria: "Custom work, considered design, made with care",
+          ticker_custom: "Custom work",
+          ticker_considered: "Considered design",
+          ticker_care: "Made with care",
+          about_eyebrow: "A little about the work",
+          about_title_start: "Ink with meaning.",
+          about_title_end: "Made for you.",
+          about_copy_one: "A tattoo is more than an image. It can hold a memory, mark a moment, or simply be something you love seeing every day. Every idea starts with a conversation.",
+          about_copy_two: "Bring a reference, a rough thought, or just a feeling. Together, we'll shape it into a design that feels personal to you.",
+          about_instagram: "Explore the work on Instagram ↗",
+          process_eyebrow: "From idea to ink",
+          process_title_start: "A thoughtful process,",
+          process_title_end: "every step of the way.",
+          process_copy: "Good work begins with listening. Here's how we take your idea from first message to finished tattoo.",
+          step_one_label: "01 / The conversation",
+          step_one_title: "Tell me your idea",
+          step_one_copy: "Share what you're imagining, where you'd like it, and any references or inspiration you have.",
+          step_two_label: "02 / The design",
+          step_two_title: "Make it personal",
+          step_two_copy: "We'll talk through the details and shape a design that feels right for you and your vision.",
+          step_three_label: "03 / The appointment",
+          step_three_title: "Make it yours",
+          step_three_copy: "Once everything feels just right, we'll arrange a time to bring your tattoo to life.",
+          booking_eyebrow: "Your next chapter starts here",
+          booking_title: "Have an idea in mind?",
+          booking_copy: "Send a message with a little about your idea and where you'd like your tattoo. Let's start a conversation.",
+          message_instagram_arrow: "Message on Instagram ↗",
+          message_whatsapp_arrow: "Message on WhatsApp ↗",
+          footer_rights: "Luyan. All rights reserved.",
+          footer_instagram: "Instagram ↗",
+          logo_alt: "Luyan's silver and gold monogram logo",
+          menu_open: "Open menu",
+          menu_close: "Close menu",
+          whatsappMessage: "Hi Luyan, I'd like to ask about a tattoo."
+        },
+        es: {
+          pageTitle: "Luyan — Artista de tatuajes personalizados",
+          pageDescription: "Tatuajes personalizados por Luyan. Explora su trabajo y consulta por tu próximo tatuaje en Instagram.",
+          nav_aria: "Navegación principal",
+          home_link: "Inicio de Luyan",
+          brand_caption: "Artista de tatuajes personalizados",
+          nav_about: "Sobre mí",
+          nav_process: "El proceso",
+          instagram: "Instagram",
+          whatsapp: "WhatsApp",
+          nav_enquire: "Consulta por tu tatuaje",
+          hero_eyebrow: "Personal por naturaleza. Permanente por elección.",
+          hero_title_start: "Tu historia,",
+          hero_title_middle: "plasmada en",
+          hero_title_end: "tinta.",
+          hero_copy: "Tatuajes pensados con cuidado, para que se sientan como si siempre hubieran sido parte de ti.",
+          message_instagram: "Escríbeme por Instagram",
+          message_whatsapp: "Escríbeme por WhatsApp",
+          meet_artist: "Conoce a Luyan",
+          scroll_note: "Desliza para descubrir",
+          ticker_aria: "Diseños personalizados, con intención y hechos con cuidado",
+          ticker_custom: "Diseños personalizados",
+          ticker_considered: "Diseño con intención",
+          ticker_care: "Hecho con cuidado",
+          about_eyebrow: "Un poco sobre mi trabajo",
+          about_title_start: "Tinta con significado.",
+          about_title_end: "Hecha para ti.",
+          about_copy_one: "Un tatuaje es más que una imagen. Puede guardar un recuerdo, marcar un momento o ser simplemente algo que te encanta ver cada día. Cada idea empieza con una conversación.",
+          about_copy_two: "Trae una referencia, una idea inicial o simplemente una sensación. Juntos le daremos forma a un diseño que se sienta tuyo.",
+          about_instagram: "Explora mi trabajo en Instagram ↗",
+          process_eyebrow: "De la idea a la tinta",
+          process_title_start: "Un proceso cuidadoso,",
+          process_title_end: "de principio a fin.",
+          process_copy: "Un buen trabajo empieza por escucharte. Así convertimos tu idea en un tatuaje, desde el primer mensaje hasta el resultado final.",
+          step_one_label: "01 / La conversación",
+          step_one_title: "Cuéntame tu idea",
+          step_one_copy: "Cuéntame qué imaginas, dónde te gustaría llevarlo y comparte cualquier referencia o inspiración.",
+          step_two_label: "02 / El diseño",
+          step_two_title: "Hazlo personal",
+          step_two_copy: "Hablaremos de los detalles y crearemos un diseño que conecte contigo y con lo que imaginas.",
+          step_three_label: "03 / La cita",
+          step_three_title: "Hazlo tuyo",
+          step_three_copy: "Cuando todo esté listo, coordinaremos una cita para darle vida a tu tatuaje.",
+          booking_eyebrow: "Tu próximo capítulo empieza aquí",
+          booking_title: "¿Tienes una idea?",
+          booking_copy: "Escríbeme con algunos detalles de tu idea y dónde te gustaría llevar el tatuaje. Hablemos.",
+          message_instagram_arrow: "Escríbeme por Instagram ↗",
+          message_whatsapp_arrow: "Escríbeme por WhatsApp ↗",
+          footer_rights: "Luyan. Todos los derechos reservados.",
+          footer_instagram: "Instagram ↗",
+          logo_alt: "Monograma plateado y dorado de Luyan",
+          menu_open: "Abrir menú",
+          menu_close: "Cerrar menú",
+          whatsappMessage: "Hola Luyan, quisiera preguntar por un tatuaje."
+        }
+      };
+      let currentLanguage = "en";
+
+      function setMenuOpen(isOpen) {
+        navLinks.classList.toggle("open", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute("aria-label", translations[currentLanguage][isOpen ? "menu_close" : "menu_open"]);
+        menuToggle.textContent = isOpen ? "×" : "☰";
+      }
+
+      function setLanguage(language) {
+        currentLanguage = language;
+        const copy = translations[language];
+        document.documentElement.lang = language;
+        document.title = copy.pageTitle;
+        document.querySelector('meta[name="description"]').setAttribute("content", copy.pageDescription);
+
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          element.textContent = copy[element.dataset.i18n];
+        });
+        document.querySelectorAll("[data-i18n-aria]").forEach((element) => {
+          element.setAttribute("aria-label", copy[element.dataset.i18nAria]);
+        });
+        document.querySelectorAll("[data-i18n-alt]").forEach((element) => {
+          element.setAttribute("alt", copy[element.dataset.i18nAlt]);
+        });
+        document.querySelectorAll("[data-whatsapp]").forEach((element) => {
+          element.href = `https://wa.me/15616631925?text=${encodeURIComponent(copy.whatsappMessage)}`;
+        });
+
+        languageToggle.textContent = language === "en" ? "ES" : "EN";
+        languageToggle.setAttribute("aria-label", language === "en" ? "Switch language to Spanish" : "Cambiar idioma a inglés");
+        languageToggle.setAttribute("aria-pressed", String(language === "es"));
+        setMenuOpen(navLinks.classList.contains("open"));
+      }
 
       menuToggle.addEventListener("click", () => {
-        const isOpen = navLinks.classList.toggle("open");
-        menuToggle.setAttribute("aria-expanded", String(isOpen));
-        menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
-        menuToggle.textContent = isOpen ? "×" : "☰";
+        setMenuOpen(!navLinks.classList.contains("open"));
       });
 
       navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("open");
-          menuToggle.setAttribute("aria-expanded", "false");
-          menuToggle.setAttribute("aria-label", "Open menu");
-          menuToggle.textContent = "☰";
-        });
+        link.addEventListener("click", () => setMenuOpen(false));
+      });
+
+      languageToggle.addEventListener("click", () => {
+        setLanguage(currentLanguage === "en" ? "es" : "en");
       });
 
       document.querySelector("#year").textContent = new Date().getFullYear();
+      setLanguage(currentLanguage);
     </script>
   </body>
 </html>
